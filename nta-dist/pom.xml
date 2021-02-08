@@ -87,6 +87,14 @@
                     <version>6</version>
                     <defaultLibBundleDir>lib</defaultLibBundleDir>
                     <modules>
+                        <ejbModule>
+                            <groupId>io.narayana.nta</groupId>
+                            <artifactId>core</artifactId>
+                        </ejbModule>
+                        <ejbModule>
+                            <groupId>io.narayana.nta</groupId>
+                            <artifactId>plugins</artifactId>
+                        </ejbModule>
                         <webModule>
                             <groupId>io.narayana.nta</groupId>
                             <artifactId>webapp</artifactId>

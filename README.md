@@ -42,6 +42,18 @@ Currently the `Transaction Analyser` can work with the WildFly 10.0.0.Final:
     cd $WILDFLY_HOME/bin
     ./standalone.sh -c standalone-full.xml
 
+## Run MySQL
+
+$ docker run --name=nta-mysql -d mysql/mysql-server
+$ docker logs nta-mysql 2>&1 | grep GENERATED
+$ docker exec -it nta-mysql mysql -uroot -p
+mysql> ALTER USER 'root'@'localhost' IDENTIFIED BY 'password';
+mysql> CREATE USER 'nta'@'localhost' IDENTIFIED BY 'nta';
+mysql> GRANT ALL PRIVILEGES ON * . * TO 'nta'@'localhost';
+mysql> FLUSH PRIVILEGES;
+mysql> create database nta;
+mysql> exit
+
 ## Deploy to WildFly
 To run the `Transaction Analyzer` you just need to deploy the ear file to WildFly and visit the console. To do this:
 
