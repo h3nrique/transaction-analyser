@@ -101,6 +101,7 @@
                             <contextRoot>/nta</contextRoot>
                         </webModule>
                     </modules>
+                    <generateApplicationXml>false</generateApplicationXml>
                     <fileNameMapping>no-version</fileNameMapping>
                 </configuration>
             </plugin>
